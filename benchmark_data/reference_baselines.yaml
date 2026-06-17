@@ -1,0 +1,19 @@
+# Published reference numbers for dashboard overlay (not auto-run scores).
+# Sources: TiMem arXiv 2601.02845, MemTensor/MemOS_eval_result on HuggingFace
+
+locomo:
+  timem_paper:
+    label: "TiMem (paper)"
+    overall_accuracy: 0.7530
+    avg_recalled_tokens: 511
+    source: "https://arxiv.org/html/2601.02845v1"
+  memos_hf:
+    label: "MemOS (HF eval)"
+    overall_accuracy: 0.7580
+    avg_recalled_tokens: 2640
+    source: "https://huggingface.co/datasets/MemTensor/MemOS_eval_result"
+  mem0_hf:
+    label: "Mem0 (HF eval)"
+    overall_accuracy: 0.6457
+    avg_recalled_tokens: 1170
+    source: "https://huggingface.co/datasets/MemTensor/MemOS_eval_result"

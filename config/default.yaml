@@ -1,0 +1,55 @@
+benchmark:
+  expert_id: benchmark
+  top_k: 10
+  persona_count: 10
+  backfill_timeout_sec: 600
+  backfill_layers: [L2, L3, L4, L5]
+  default_preset: stable
+
+presets:
+  stable:
+    top_k: 10
+    timem_search_mode: enhanced_semantic
+    timem_use_hybrid: true
+    timem_enable_memories_rethink: false
+  paper:
+    top_k: 20
+    timem_search_mode: enhanced_semantic
+    timem_use_hybrid: true
+    timem_enable_memories_rethink: false
+
+locomo:
+  # Official data: snap-research/locomo data/locomo10.json (loaded via GitHub in benchmark_data)
+  # HuggingFace id only used as optional fallback if you host a mirror
+  dataset_id: snap-stanford/LoCoMo
+  split: test
+  persona_count: 10
+
+retrieval:
+  # Align with TiMEM API default (SearchConfig.search_mode)
+  timem_search_mode: enhanced_semantic
+  timem_use_hybrid: true
+  timem_enable_memories_rethink: false
+  mem0_search_threshold: 0.0
+  query_concurrency: 10
+  timem_query_concurrency: 3   # 对齐 TiMEM 后端 PG 连接预算（每条检索 workflow 占多连接）
+  judge_concurrency: 10
+  backfill_concurrency: 3
+  system_parallel: true
+  pipeline_mode: true
+  judge_max_retries: 3
+  judge_retry_base_sec: 2
+
+judge:
+  provider: ark
+  model: ""   # set via JUDGE_MODEL env (ARK endpoint id, e.g. ep-xxx or doubao-xxx)
+  temperature: 0
+
+reports_dir: reports
+
+ingest:
+  session_concurrency: 10
+  mem0_session_concurrency: 10
+  system_parallel: true
+  mem0_poll_mode: deferred   # sync | deferred | pipeline
+  mem0_poll_concurrency: 10

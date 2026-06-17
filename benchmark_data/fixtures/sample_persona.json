@@ -1,0 +1,35 @@
+[
+  {
+    "persona_id": "locomo_persona_00",
+    "sessions": [
+      {
+        "session_id": "locomo_persona_00_session_00",
+        "messages": [
+          {"role": "user1", "content": "I'm planning to visit Guangzhou this summer. Which hotel chains do you recommend?"},
+          {"role": "user2", "content": "You could consider 7 Days Inn, All Seasons, or Hilton."},
+          {"role": "user1", "content": "I'll go with 7 Days Inn."},
+          {"role": "user2", "content": "Great choice. Let me know if you need anything else."}
+        ]
+      },
+      {
+        "session_id": "locomo_persona_00_session_01",
+        "messages": [
+          {"role": "user1", "content": "For National Day holiday I want a new city and a hotel brand I haven't tried."},
+          {"role": "user2", "content": "Tell me cities you've already visited and I can suggest alternatives."}
+        ]
+      }
+    ],
+    "qa_pairs": [
+      {
+        "question": "Which hotel chain did the user choose for the Guangzhou trip?",
+        "answer": "7 Days Inn",
+        "category": "single-hop"
+      },
+      {
+        "question": "Where is the user planning to travel in summer?",
+        "answer": "Guangzhou",
+        "category": "single-hop"
+      }
+    ]
+  }
+]

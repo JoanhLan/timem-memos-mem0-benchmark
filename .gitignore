@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+reports/*/
+!.gitkeep
+benchmark_data/cache/
+*.log
+tmp_*.json
+.DS_Store
+Thumbs.db
+dashboard/node_modules/
+dashboard/dist/
