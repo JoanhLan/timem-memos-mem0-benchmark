@@ -1,3 +1,9 @@
+<div align="right">
+
+**English** | [简体中文](README.zh-CN.md)
+
+</div>
+
 # TiMEM vs MemOS vs Mem0 Benchmark
 
 ![CI](https://github.com/JoanhLan/timem-memos-mem0-benchmark/actions/workflows/ci.yml/badge.svg)
@@ -122,14 +128,14 @@ Or: `.\scripts\start_dashboard.ps1`
 
 Force rebuild UI: `python main.py dashboard --rebuild`
 
-### Workflow in the UI / 界面工作流
+### Workflow in the UI
 
-1. **新建 Run / New Run** → optional custom Run ID (auto-generated if empty); dataset: Fixture or LoCoMo 10
-2. **一键 Full / Full pipeline** or step **Ingest / T0 / T1**
-3. **写入 / Ingest** → per-system session details
-4. **检索 / Retrieval** → metrics + per-question recall drill-down
-5. **对比 / Compare** → Overview / Ingest / Retrieval tabs
-6. **调试 / Debug** → single-query search across systems (no formal report)
+1. **New Run** — optional custom Run ID (auto-generated if empty); dataset: Fixture or LoCoMo 10
+2. **Full pipeline** or step **Ingest / T0 / T1**
+3. **Ingest** — per-system session details
+4. **Retrieval** — metrics + per-question recall drill-down
+5. **Compare** — Overview / Ingest / Retrieval tabs
+6. **Debug** — single-query search across systems (no formal report)
 
 ## Project layout
 
@@ -156,7 +162,7 @@ dashboard/    Vue comparison UI
 - **Mem0 poll**: Default `deferred` — POST pairs first, flush events per session; T0 flushes any stragglers.
 - **Ingest latency**: Dashboard/API p50 is **per single add** (`add_latency`); `session_latency` kept for whole-session view. Old runs: `python scripts/migrate_ingest_add_latency.py --run-id <id>` (equal-split, `add_latency_estimated: true`).
 - **Ingest granularity**: TiMEM and Mem0 write **adjacent 2-message pairs** per API call (official `fragment_size=2` / Contextual Add); MemOS sends the **full session** in one call. See [BENCHMARK_PROTOCOL.md](./BENCHMARK_PROTOCOL.md#ingest-granularity-per-system).
-- **New run required**: After pair-chunking change, create a new `run_id` for ingest; do not compare with older runs (e.g. LJY) that used whole-session TiMEM/Mem0 ingest.
+- **New run required**: After pair-chunking change, create a new `run_id` for ingest; do not compare with older runs that used whole-session TiMEM/Mem0 ingest.
 - **LoCoMo ingest cost**: ~272 sessions × ~10 pairs ≈ 2700+ POST calls per system for TiMEM and Mem0; use session concurrency to reduce wall time.
 - **Retrieval concurrency**: **Search→Judge pipeline** (`pipeline_mode: true`). TiMEM search default **3** (`timem_query_concurrency`) to avoid exhausting backend PostgreSQL `max_connections`; memos/mem0 query **10**; judge **10**; TiMEM backfill **3**. See [BENCHMARK_PROTOCOL.md](./BENCHMARK_PROTOCOL.md#retrieval-concurrency-benchmark-harness).
 - **CLI tuning**: `python main.py retrieve <run_id> --query-concurrency 12 --judge-concurrency 6 --backfill-concurrency 3 --no-pipeline` (disable pipeline for A/B).
