@@ -12,7 +12,7 @@
         <li><strong>Ingest 等待 L2</strong>：实验页可勾选「Ingest 后等待 TiMEM L2」（默认关闭）；T0 检索仍会补 L2 安全网</li>
         <li><strong>手动 Backfill</strong>：实验/检索页「仅 TiMEM Backfill」；可勾选 L2–L5，写入 <code>backfill.json</code>（<code>mode: manual</code>），不影响 T1 默认层级</li>
         <li><strong>配置文件</strong>：<code>config/default.yaml</code>、<code>.env</code></li>
-        <li><strong>TiMEM</strong>：<code>TIMEM_BASE_URL</code>、<code>TIMEM_API_KEY</code>、<code>TIMEM_ACCOUNT_ID</code></li>
+        <li><strong>TiMEM</strong>：<code>TIMEM_BASE_URL</code>（默认 <code>https://api.timem.cloud</code>）、<code>TIMEM_API_KEY</code>、<code>TIMEM_ACCOUNT_ID</code> — 在 <a href="https://api.timem.cloud" target="_blank" rel="noopener">api.timem.cloud</a> 注册并获取 API Key</li>
         <li><strong>MemOS</strong>：<code>MEMOS_API_KEY</code></li>
         <li><strong>Mem0</strong>：<code>MEM0_API_KEY</code>、<code>MEM0_BASE_URL</code></li>
         <li><strong>Judge</strong>：<code>ARK_API_KEY</code>、<code>JUDGE_MODEL</code></li>

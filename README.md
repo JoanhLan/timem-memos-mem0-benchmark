@@ -34,8 +34,8 @@ Required env vars:
 
 | Variable | Description |
 |----------|-------------|
-| `TIMEM_BASE_URL` | Default `http://localhost:8001` |
-| `TIMEM_API_KEY` | TiMEM API key |
+| `TIMEM_BASE_URL` | Default `https://api.timem.cloud` (override with `http://localhost:8001` for local TiMEM) |
+| `TIMEM_API_KEY` | TiMEM API key — register at [api.timem.cloud](https://api.timem.cloud) |
 | `TIMEM_ACCOUNT_ID` | Required for backfill |
 | `MEMOS_API_KEY` | MemOS Cloud token |
 | `MEM0_API_KEY` | Mem0 Platform API key |
@@ -77,7 +77,7 @@ Reports are written to `reports/{run_id}/`.
 
 ## Dashboard (Benchmark Lab)
 
-Vue 3 experiment console (similar to TiMEM `http://localhost:8001/dashboard/`):
+Vue 3 experiment console (similar to the TiMEM cloud dashboard at [api.timem.cloud](https://api.timem.cloud)):
 
 - Start jobs on the page: **Full** (ingest → T0 → T1 with TiMEM backfill), or step **Ingest / T0 / T1**
 - Default dataset: **fixture**; optional **LoCoMo 10 persona**

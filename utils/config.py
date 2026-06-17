@@ -123,7 +123,7 @@ class BenchmarkRunConfig:
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=str(PROJECT_ROOT / ".env"), extra="ignore")
 
-    timem_base_url: str = Field(default="http://localhost:8001", alias="TIMEM_BASE_URL")
+    timem_base_url: str = Field(default="https://api.timem.cloud", alias="TIMEM_BASE_URL")
     timem_api_key: str = Field(default="", alias="TIMEM_API_KEY")
     timem_account_id: str = Field(default="", alias="TIMEM_ACCOUNT_ID")
 

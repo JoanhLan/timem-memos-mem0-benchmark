@@ -6,7 +6,7 @@ Memory only: **ingest** + **retrieval** (performance + recall quality + efficien
 
 | System | Base URL | Auth |
 |--------|----------|------|
-| TiMEM | `http://localhost:8001` | `X-API-Key` |
+| TiMEM | `https://api.timem.cloud` | `X-API-Key` (register at [api.timem.cloud](https://api.timem.cloud)) |
 | MemOS Cloud | `https://memos.memtensor.cn/api/openmem/v1` | `Authorization: Token {MEMOS_API_KEY}` |
 | Mem0 Platform | `https://api.mem0.ai` | `Authorization: Token {MEM0_API_KEY}` |
 | Judge | Volcengine ARK | `JUDGE_MODEL` endpoint, temperature=0 |
